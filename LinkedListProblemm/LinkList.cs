@@ -46,7 +46,7 @@ namespace LinkedListProblemm
             Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("Linked list is Empty");
+                Console.WriteLine("Linked list is empty");
             }
             while (temp != null)
             {
@@ -100,7 +100,7 @@ namespace LinkedListProblemm
         {
             if (this.head == null)
             {
-                Console.WriteLine("Linked List is Empty");
+                Console.WriteLine("Linked List is empty");
                 return;
             }
             Node temp = this.head;
@@ -119,6 +119,24 @@ namespace LinkedListProblemm
             }
             Node next = temp.next.next;
             temp.next = next;
+        }
+        public Node RemoveLastNode()
+        {
+            if (head == null)
+            {
+                return null;
+            }
+            if (head.next == null)
+            {
+                return null;
+            }
+            Node NewNode = head;
+            while (NewNode.next.next != null)
+            {
+                NewNode = NewNode.next;
+            }
+            NewNode.next = null;
+            return head;
         }
     }
 }

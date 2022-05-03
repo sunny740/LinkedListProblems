@@ -8,10 +8,10 @@ class program
         Console.WriteLine(" **** Welcome to Linked List Program ***\n");
         LinkList list = new LinkList();
         bool check = true;
-        Console.WriteLine("1.Simple Linked List\n2.Add in reverse order\n3.Insert Number at Particular Position\n4.Delete a Number at Particular Position");
+        Console.WriteLine("1.Simple Linked List\n2.Add in reverse order\n3.Insert number at particular position\n4.Delete a number at particular position\n5.Delete Last Node");
         while (check)
         {
-            Console.WriteLine("Take an option to execute");
+            Console.WriteLine("Take an Option To Execute");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -33,9 +33,13 @@ class program
                     list.Display();
                     break;
                 case 4:
-                    Console.WriteLine("Enter the position of the element");
+                    Console.WriteLine("Enter The Position Of The Element");
                     int position = Convert.ToInt32(Console.ReadLine());
                     list.DeleteNodeAtParticularPosition(position);
+                    list.Display();
+                    break;
+                case 5:
+                    list.RemoveLastNode();
                     list.Display();
                     break;
                 default: break;
