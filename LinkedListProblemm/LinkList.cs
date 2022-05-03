@@ -25,33 +25,34 @@ namespace LinkedListProblemm
                 }
                 temp.next = node;
             }
-            Console.WriteLine("{0} inserted into Linked list", node.data);
-        }
-        public void AddReverseOrder(int data)
-        {
-            Node newNode = new Node(data);
-            if (this.head == null)
-            {
-                this.head = newNode;
-            }
-            else
-            {
-                Node temp = this.head;
-                head = newNode;
-            }
-            Display();
+            Console.WriteLine("{0} Inserted into Linked List\n", node.data);
         }
         public void Display()
         {
             Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("Linked list is empty");
+                Console.WriteLine("LinkList Is Empty");
+                return;
             }
             while (temp != null)
             {
-                Console.WriteLine(temp.data + " ");
+                Console.Write(temp.data + " ");
                 temp = temp.next;
+            }
+        }
+        public void AddReverseOrder(int data)
+        {
+            Node newNode = new Node(data); // (56,null)
+            if (head == null)
+            {
+                head = newNode; // (70,null)
+            }
+            else
+            {
+                Node temp = head;// (30,next)->(70,null)
+                head = newNode;//(56,null)
+                head.next = temp;//(56,next)->(30,next)->(70,null)
             }
         }
         public int Search(int value)
@@ -70,7 +71,8 @@ namespace LinkedListProblemm
             }
             return count;
         }
-        public Node InsertAtParticularPosition(int position, int data)
+
+        public Node InsertParticularPosition(int position, int data)
         {
             Node newestNode = new Node(data);
             if (this.head == null)
@@ -94,13 +96,43 @@ namespace LinkedListProblemm
             }
             newestNode.next = prev.next;
             prev.next = newestNode;
+            Console.WriteLine("Data Inserted");
             return this.head;
         }
-        public void DltNodeAtParticularPosition(int position)
+        public Node RmvFirstNode()
         {
             if (this.head == null)
             {
-                Console.WriteLine("Linked List is empty");
+                return null;
+            }
+            this.head = this.head.next;
+            Console.WriteLine("First Node Is Deleted ");
+            return this.head;
+        }
+        public Node RmvLastNode()
+        {
+            if (head == null)
+            {
+                return null;
+            }
+            if (head.next == null)
+            {
+                return null;
+            }
+            Node NewNode = head;
+            while (NewNode.next.next != null)
+            {
+                NewNode = NewNode.next;
+            }
+            NewNode.next = null;
+            Console.WriteLine("Last Node Is Deleted ");
+            return head;
+        }
+        public void DltNodeParticularPosition(int position)
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("LinkList is Empty");
                 return;
             }
             Node temp = this.head;
@@ -119,24 +151,6 @@ namespace LinkedListProblemm
             }
             Node next = temp.next.next;
             temp.next = next;
-        }
-        public Node RmvLastNode()
-        {
-            if (head == null)
-            {
-                return null;
-            }
-            if (head.next == null)
-            {
-                return null;
-            }
-            Node NewNode = head;
-            while (NewNode.next.next != null)
-            {
-                NewNode = NewNode.next;
-            }
-            NewNode.next = null;
-            return head;
         }
     }
 }

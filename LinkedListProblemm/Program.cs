@@ -5,13 +5,13 @@ class program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine(" *** Welcome to Linked List Program *** ");
+        Console.WriteLine(" *** Welcome to Linked List Program ***\n ");
         bool end = true;
-        Console.WriteLine("Enter Option\n1.Add Data\n2.Reverse Data\n3.InsertData\n4.RemoveFirstElement\n5.RemoveLastElement\n6.Search Node\n7.InsertNewData\n8.End Of Program");
+        Console.WriteLine("\n1.Add Data\n2.Reverse Data\n3.InsertData\n4.Remove First Element\n5.Remove Last Element\n6.Search Node\n7.Insert New Data\n8.Delete Node\n9.End Of Program ");
         while (end)
         {
             LinkList list = new LinkList();
-            Console.WriteLine("\nEnter Option For Exicute The Program");
+            Console.WriteLine("\nChoose An Option : ");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -31,14 +31,14 @@ class program
                     list.Add(56);
                     list.Add(70);
                     int num = list.Search(56);
-                    list.InsertAtParticularPosition(num + 1, 30);
+                    list.InsertParticularPosition(num + 1, 30);
                     list.Display();
                     break;
                 case 4:
                     list.Add(56);
                     list.Add(30);
                     list.Add(70);
-                    list.RmvLastNode();
+                    list.RmvFirstNode();
                     list.Display();
                     break;
                 case 5:
@@ -59,10 +59,21 @@ class program
                     list.Add(30);
                     list.Add(70);
                     int newNode = list.Search(30);
-                    list.InsertAtParticularPosition(newNode + 1, 40);
+                    list.InsertParticularPosition(newNode + 1, 40);
                     list.Display();
                     break;
                 case 8:
+                    list.Add(56);
+                    list.Add(30);
+                    list.Add(70);
+                    int node = list.Search(30);
+                    list.InsertParticularPosition(node + 1, 40);
+                    list.Display();
+                    Console.WriteLine("\n\nElement Deleted SuccessFully");
+                    list.DltNodeParticularPosition(node + 1);
+                    list.Display();
+                    break;
+                case 9:
                     end = false;
                     Console.WriteLine("Program Is Ended.");
                     break;
