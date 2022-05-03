@@ -8,7 +8,7 @@ class program
         Console.WriteLine(" **** Welcome to Linked List Program ***\n");
         LinkList list = new LinkList();
         bool check = true;
-        Console.WriteLine("1.Simple Linked List\n2.Add in reverse order\n3.Insert number at particular position");
+        Console.WriteLine("1.Simple Linked List\n2.Add in reverse order\n3.Insert Number at Particular Position\n4.Delete a Number at Particular Position");
         while (check)
         {
             Console.WriteLine("Take an option to execute");
@@ -32,6 +32,13 @@ class program
                     list.InsertAtParticularPosition(a + 1, 30);
                     list.Display();
                     break;
+                case 4:
+                    Console.WriteLine("Enter the position of the element");
+                    int position = Convert.ToInt32(Console.ReadLine());
+                    list.DeleteNodeAtParticularPosition(position);
+                    list.Display();
+                    break;
+                default: break;
             }
         }
     }

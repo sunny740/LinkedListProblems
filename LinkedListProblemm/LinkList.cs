@@ -46,7 +46,7 @@ namespace LinkedListProblemm
             Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("Linked list is empty");
+                Console.WriteLine("Linked list is Empty");
             }
             while (temp != null)
             {
@@ -95,6 +95,30 @@ namespace LinkedListProblemm
             newestNode.next = prev.next;
             prev.next = newestNode;
             return this.head;
+        }
+        public void DeleteNodeAtParticularPosition(int position)
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Linked List is Empty");
+                return;
+            }
+            Node temp = this.head;
+            if (position == 0)
+            {
+                this.head = temp.next;
+                return;
+            }
+            for (int i = 0; temp != null && i < position - 1; i++)
+            {
+                temp = temp.next;
+            }
+            if (temp == null || temp.next == null)
+            {
+                return;
+            }
+            Node next = temp.next.next;
+            temp.next = next;
         }
     }
 }
