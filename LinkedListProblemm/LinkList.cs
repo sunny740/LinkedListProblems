@@ -8,8 +8,8 @@ namespace LinkedListProblemm
 {
     public class LinkList
     {
-        public Node head;
-        public void Add(int data)
+        internal Node head;
+        internal void Add(int data)
         {
             Node node = new Node(data);
             if (this.head == null)
@@ -25,34 +25,33 @@ namespace LinkedListProblemm
                 }
                 temp.next = node;
             }
-            Console.WriteLine("{0} Inserted into Link List", node.data);
+            Console.WriteLine("{0} inserted into Linked list", node.data);
         }
-        public void Display()
+        internal void AddInReverseOrder(int data)
+        {
+            Node newNode = new Node(data);
+            if (this.head == null)
+            {
+                this.head = newNode;
+            }
+            else
+            {
+                Node temp = this.head;
+                head = newNode;
+            }
+            Display();
+        }
+        internal void Display()
         {
             Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("LinkList Is Empty");
-                return;
+                Console.WriteLine("List is Empty");
             }
             while (temp != null)
             {
-                Console.Write(temp.data + " ");
+                Console.WriteLine(temp.data + " ");
                 temp = temp.next;
-            }
-        }
-        public void AddInReverseOrder(int data)
-        {
-            Node newNode = new Node(data); // (56,null)
-            if (head == null)
-            {
-                head = newNode; // (70,null)
-            }
-            else
-            {
-                Node temp = head;// (30,next)->(70,null)
-                head = newNode;//(56,null)
-                head.next = temp;//(56,next)->(30,next)->(70,null)
             }
         }
     }

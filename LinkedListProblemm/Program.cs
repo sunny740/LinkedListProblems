@@ -8,10 +8,10 @@ class program
         Console.WriteLine(" **** Welcome to Linked List Program ***\n");
         LinkList list = new LinkList();
         bool check = true;
-        Console.WriteLine("1.Simple Link List\n2.Add in Reverse Order\n");
+        Console.WriteLine("1.Simple Linked List\n2.Add in Reverse Order");
         while (check)
         {
-            Console.WriteLine("Take an Option To Execute");
+            Console.WriteLine("Take An Option To Execute");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
