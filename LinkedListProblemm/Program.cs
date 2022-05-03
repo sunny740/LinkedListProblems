@@ -7,11 +7,11 @@ class program
     {
         Console.WriteLine(" *** Welcome to Linked List Program ***\n ");
         bool end = true;
-        Console.WriteLine("\n1.Add Data\n2.Reverse Data\n3.InsertData\n4.Remove First Element\n5.Remove Last Element\n6.Search Node\n7.Insert New Data\n8.Delete Node\n9.End Of Program ");
+        Console.WriteLine("\n1.Add Data\n2.Reverse Data\n3.Insert Data\n4.Remove First Element\n5.Remove Last Element\n6.Search Node\n7.Insert New Data\n8.Delete Node At Particular Position\n9.Sorted Element\n10.End Of Program ");
         while (end)
         {
             LinkList list = new LinkList();
-            Console.WriteLine("\nChoose An Option : ");
+            Console.WriteLine("\nEnter Option For Exicute The Program");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -22,7 +22,7 @@ class program
                     list.Display();
                     break;
                 case 2:
-                    list.AddReverseOrder(70);
+                    list.ReverseOrder(70);
                     list.Add(30);
                     list.Add(56);
                     list.Display();
@@ -31,7 +31,7 @@ class program
                     list.Add(56);
                     list.Add(70);
                     int num = list.Search(56);
-                    list.InsertParticularPosition(num + 1, 30);
+                    list.InsertAtParticularPosition(num + 1, 30);
                     list.Display();
                     break;
                 case 4:
@@ -59,7 +59,7 @@ class program
                     list.Add(30);
                     list.Add(70);
                     int newNode = list.Search(30);
-                    list.InsertParticularPosition(newNode + 1, 40);
+                    list.InsertAtParticularPosition(newNode + 1, 40);
                     list.Display();
                     break;
                 case 8:
@@ -67,13 +67,25 @@ class program
                     list.Add(30);
                     list.Add(70);
                     int node = list.Search(30);
-                    list.InsertParticularPosition(node + 1, 40);
+                    list.InsertAtParticularPosition(node + 1, 40);
                     list.Display();
-                    Console.WriteLine("\n\nElement Deleted SuccessFully");
-                    list.DltNodeParticularPosition(node + 1);
+                    Console.WriteLine("\n\nElement Delete SuccessFully");
+                    list.DltNodeAtParticularPosition(node + 1);
                     list.Display();
                     break;
                 case 9:
+                    SortingLinkList<int> sortingList = new SortingLinkList<int>();
+                    sortingList.AddNode(56);
+                    sortingList.AddNode(30);
+                    sortingList.AddNode(40);
+                    sortingList.AddNode(70);
+                    Console.WriteLine("Original List: ");
+                    sortingList.DisplaySort();
+                    sortingList.SortOrderedList();
+                    Console.WriteLine("Final Sorted List: ");
+                    sortingList.DisplaySort();
+                    break;
+                case 10:
                     end = false;
                     Console.WriteLine("Program Is Ended.");
                     break;

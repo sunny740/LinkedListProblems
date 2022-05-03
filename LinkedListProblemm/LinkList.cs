@@ -41,7 +41,7 @@ namespace LinkedListProblemm
                 temp = temp.next;
             }
         }
-        public void AddReverseOrder(int data)
+        public void AddInReverseOrder(int data)
         {
             Node newNode = new Node(data); // (56,null)
             if (head == null)
@@ -72,7 +72,7 @@ namespace LinkedListProblemm
             return count;
         }
 
-        public Node InsertParticularPosition(int position, int data)
+        public Node InsertAtParticularPosition(int position, int data)
         {
             Node newestNode = new Node(data);
             if (this.head == null)
@@ -106,7 +106,7 @@ namespace LinkedListProblemm
                 return null;
             }
             this.head = this.head.next;
-            Console.WriteLine("First Node Is Deleted ");
+            Console.WriteLine("First Node Is Deleted");
             return this.head;
         }
         public Node RmvLastNode()
@@ -125,14 +125,14 @@ namespace LinkedListProblemm
                 NewNode = NewNode.next;
             }
             NewNode.next = null;
-            Console.WriteLine("Last Node Is Deleted ");
+            Console.WriteLine("Last Node Is Deleted");
             return head;
         }
-        public void DltNodeParticularPosition(int position)
+        public void DltNodeAtParticularPosition(int position)
         {
             if (this.head == null)
             {
-                Console.WriteLine("LinkList is Empty");
+                Console.WriteLine("LinkedList is Empty");
                 return;
             }
             Node temp = this.head;
