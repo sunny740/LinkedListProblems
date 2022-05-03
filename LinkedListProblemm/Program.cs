@@ -8,7 +8,7 @@ class program
         Console.WriteLine(" **** Welcome to Linked List Program ***\n");
         LinkList list = new LinkList();
         bool check = true;
-        Console.WriteLine("1.Simple Linked List\n2.Add in reverse order\n3.Insert number at particular position\n4.Delete a number at particular position\n5.Delete Last Node");
+        Console.WriteLine("1.Simple Linked List\n2.Add in Reverse Order\n3.Insert number at Particular Position\n4.Delete a Number at Particular position\n5.Delete Last Node\n6.Search For The Element");
         while (check)
         {
             Console.WriteLine("Take an Option To Execute");
@@ -33,14 +33,28 @@ class program
                     list.Display();
                     break;
                 case 4:
-                    Console.WriteLine("Enter The Position Of The Element");
+                    list.Add(56);
+                    list.Add(30);
+                    list.Add(70);
+                    Console.WriteLine("Enter The Position of The Element");
                     int position = Convert.ToInt32(Console.ReadLine());
                     list.DeleteNodeAtParticularPosition(position);
                     list.Display();
                     break;
                 case 5:
+                    list.Add(56);
+                    list.Add(30);
+                    list.Add(70);
                     list.RemoveLastNode();
                     list.Display();
+                    break;
+                case 6:
+                    list.Add(30);
+                    list.Add(56);
+                    list.Add(70);
+                    int value = list.Search(30);
+                    list.Display();
+                    Console.WriteLine("Element is in" + value);
                     break;
                 default: break;
             }
