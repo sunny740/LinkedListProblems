@@ -27,7 +27,7 @@ namespace LinkedListProblemm
             }
             Console.WriteLine("{0} inserted into Linked list", node.data);
         }
-        public void AddInReverseOrder(int data)
+        public void AddReverseOrder(int data)
         {
             Node newNode = new Node(data);
             if (this.head == null)
@@ -46,7 +46,7 @@ namespace LinkedListProblemm
             Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("Linked list is Empty");
+                Console.WriteLine("Linked list is empty");
             }
             while (temp != null)
             {
@@ -96,11 +96,11 @@ namespace LinkedListProblemm
             prev.next = newestNode;
             return this.head;
         }
-        public void DeleteNodeAtParticularPosition(int position)
+        public void DltNodeAtParticularPosition(int position)
         {
             if (this.head == null)
             {
-                Console.WriteLine("Linked List is Empty");
+                Console.WriteLine("Linked List is empty");
                 return;
             }
             Node temp = this.head;
@@ -120,7 +120,7 @@ namespace LinkedListProblemm
             Node next = temp.next.next;
             temp.next = next;
         }
-        public Node RemoveLastNode()
+        public Node RmvLastNode()
         {
             if (head == null)
             {
